@@ -73,3 +73,124 @@ $lagoon-blue: fade-out(#62fdca, 0.5);
 }
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+* Color Functions
+-----------------
+Sass also allows us to perform mathematical functions to compute measurements— including colors.
+
+Here is how Sass computes colors:
+
+	1. The operation is performed on the red, green, and blue components.
+
+	2. It computes the answer by operating on every two digits.
+
+$color: #010203 + #040506;
+
+The above would compute piece-wise as follows:
+
+01 + 04 = 05
+02 + 05 = 07
+03 + 06 = 09
+
+and compile to:
+
+color: #050709;
+
+Sass arithmetic can also compute HSLA and string colors such as red and blue.
+
+* Instructions
+--------------
+Checkpoint 1 Passed
+1.
+Try it. Add red and blue to make the font color of .math purple the following property:
+
+color: red + blue;
+
+Click “Run” to see your changes in the browser and inspect them in the output of main.css.
+
+index.html
+----------
+<link rel="stylesheet" type="text/css" href="main.css">
+
+<div class="math">Styled with Math!</div>
+
+main.scss
+---------
+$width: 250px;
+$lagoon-blue: fade-out(#62fdca, 0.5);
+
+.math {
+  width: $width;
+  text-align: center;
+  background-color: $lagoon-blue;
+  color: red + blue;
+}
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
