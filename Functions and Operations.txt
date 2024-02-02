@@ -128,6 +128,88 @@ $lagoon-blue: fade-out(#62fdca, 0.5);
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
+* Arithmetic
+------------
+The Sass arithmetic operations are:
+
+	1. addition +
+
+	2. subtraction -
+
+	3. multiplication *
+
+	4. division /, and
+
+	5. modulo %.
+
+Note: Modulo, or %, is the remainder in a given division, so “9%2” would be “1”.
+
+SCSS arithmetic requires that the units are compatible; for example, you can’t multiply pixels by ems.
+
+Also, just like in regular math, multiplying two units together results in squared units:10px * 10px = 100px * px.
+
+Since there is no such thing as squared units in CSS, the above would throw an error. You would need to multiply 10px * 10 in order to obtain 100px.
+
+* Instructions
+--------------
+Checkpoint 1 Passed
+1.
+In main.scss inside of .math, include the following computations:
+
+height: $width/6;
+line-height: $width/6;
+
+Click “Run” to see your changes in the browser and inspect them in the output of main.css.
+
+Checkpoint 2 Passed
+2.
+In main.scss compute the border-radius property of the .math class to be a 1/30th of its width.
+
+index.html
+----------
+<link rel="stylesheet" type="text/css" href="main.css">
+
+<div class="math">Styled with Math!</div>
+
+main.scss
+---------
+$width: 250px;
+$lagoon-blue: fade-out(#62fdca, 0.5);
+
+.math {
+  width: $width;
+  text-align: center;
+  background-color: $lagoon-blue;
+  color: red + blue;
+  height: $width/6;
+  line-height: $width/6;
+  border-radius: $width/30;
+}
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
