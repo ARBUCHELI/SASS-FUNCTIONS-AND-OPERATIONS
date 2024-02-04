@@ -291,6 +291,105 @@ $list: (orange, purple, teal);
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
+* For Loops
+-----------
+For loops in Sass can be used to style numerous elements or assigning properties all at once. They work like any for-loop you’ve seen before.
+
+Sass’s for loop syntax is as follows:
+
+@for $i from $begin through $end {
+   //some rules and or conditions
+}
+
+In the example above:
+
+	1. $i is just a variable for the index, or position of the element in the list
+
+	2. $begin and $end are placeholders for the start and end points of the loop.
+
+	3. The keywords through and to are interchangeable in Sass
+
+For-loops are useful for many things, but in the following exercises we will be using them to style a block of rainbow divs!
+
+* Instructions
+--------------
+Checkpoint 1 Passed
+1.
+In main.scss, insert the following for-loop:
+
+@for $i from 1 through $total {
+  .ray:nth-child(#{$i}) {
+    background: blue;
+   }
+}
+
+Click “Run” to see the changes in the browser and inspect the output in main.css.
+
+Checkpoint 2 Passed
+2.
+Inside of the body of the for-loop, dance through the colorwheel by using the color function we saw before and modifying the background:
+
+background: adjust-hue(blue, $i * $step);
+
+Click “Run” to see your changes in the browser and inspect them in the output of main.css.
+
+index.html
+----------
+<link rel="stylesheet" type="text/css" href="main.css">
+
+<div class='ray'></div>
+<div class='ray'></div>
+<div class='ray'></div>
+<div class='ray'></div>
+<div class='ray'></div>
+<div class='ray'></div>
+<div class='ray'></div>
+<div class='ray'></div>
+<div class='ray'></div>
+<div class='ray'></div>
+
+main.scss
+---------
+$total: 10; //Number of .ray divs in our html
+$step: 360deg / $total; //Used to compute the hue based on color-wheel
+
+
+.ray {
+  height: 30px;
+}
+
+//Add your for-loop here:
+@for $i from 1 through $total {
+  .ray:nth-child(#{$i}) {
+    background: adjust-hue(blue, $i * $step);
+   }
+}
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
