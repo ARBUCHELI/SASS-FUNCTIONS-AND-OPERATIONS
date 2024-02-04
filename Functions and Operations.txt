@@ -243,6 +243,76 @@ index.html
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
+* Each Loops
+------------
+Beyond the simple math and color transformations we explored in the previous exercises, Sass also allows for more complex functions.
+
+Each loops in Sass iterate on each of the values on a list. The syntax is as follows:
+
+@each $item in $list {
+  //some rules and or conditions
+}
+
+The value of $item is dynamically assigned to the value of the object in the list according to its position and the iteration of the loop.
+
+* Instructions
+--------------
+Checkpoint 1 Passed
+1.
+In main.scss write an @each loop to assign the background-color of the class based on the items in $list:
+
+@each $item in $list {
+  .#{$item} {
+    background: $item;
+  }
+}
+
+Click “Run” to see your changes in the browser and inspect them in the output of main.css.
+
+index.html
+----------
+<link rel="stylesheet" type="text/css" href="main.css">
+
+<div class="orange">orange</div>
+<div class="purple">purple</div>
+<div class="teal">teal</div>
+
+main.scss
+---------
+$list: (orange, purple, teal);
+
+//Add your each-loop here
+@each $item in $list {
+  .#{$item} {
+    background: $item;
+  }
+}
+
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
