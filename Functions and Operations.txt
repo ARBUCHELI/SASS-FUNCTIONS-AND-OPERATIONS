@@ -367,6 +367,117 @@ $step: 360deg / $total; //Used to compute the hue based on color-wheel
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
+* Conditionals
+--------------
+In Sass, if() is a function that can only branch one of two ways based on a condition. You can use it inline, to assign the value of a property:
+
+width: if( $condition, $value-if-true, $value-if-false);
+
+For cases with more than two outcomes, the @if, @else-if, and @else directives allow for more flexibility.
+
+@mixin deck($suit) {
+ @if($suit == hearts || $suit == spades){
+   color: blue;
+ }
+ @else-if($suit == clovers || $suit == diamonds){
+   color: red;
+ }
+ @else{
+   //some rule
+ }
+}
+
+The mixin above is a good example for how we would want to handle the coloring of a deck of cards based on a suit condition.
+
+* Instructions
+--------------
+Checkpoint 1 Passed
+1.
+Let’s spice up the look of our rainbow by changing the width of a .ray based on whether the element falls on an even or odd number— we can use modulo to determine if something is even or 
+odd. In main.scss, add the following to your loop:
+
+width: if($i % 2 == 0, 300px, 350px);
+margin-left: if($i % 2 == 0, 0px, 50px);
+
+Click “Run” to see your changes in the browser and inspect them in the output of main.css.
+
+index.html
+----------
+<link rel="stylesheet" type="text/css" href="main.css">
+
+<div class='ray'></div>
+<div class='ray'></div>
+<div class='ray'></div>
+<div class='ray'></div>
+<div class='ray'></div>
+<div class='ray'></div>
+<div class='ray'></div>
+<div class='ray'></div>
+<div class='ray'></div>
+<div class='ray'></div>
+
+main.scss
+---------
+$total: 10; //Number of .ray divs in our html
+$step: 360deg / $total; //Used to compute the hue based on color-wheel
+
+
+.ray {
+  height: 30px;
+}
+
+//Add your for-loop here:
+@for $i from 1 through $total {
+	.ray:nth-child(#{$i}){
+		background: adjust-hue(blue, $i * $step);
+    width: if($i % 2 == 0, 300px, 350px);
+		margin-left: if($i % 2 == 0, 0px, 50px);
+	}
+}
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+* Generalizations
+-----------------
+	. Functions in Sass allow for an easier way to style pages, work with colors, and iterate on DOM elements.
+
+	. Having both for loops and each loops gives the programmer different formats to iterate on both lists and maps.
+
+	. The introduction of conditional statements allows you to create logic-based styling rules using SCSS.
+
+There are other native Sass functions available to use, and you can even make your own custom functions if you have a good foundation in Ruby, check out more information here.
+
+Congrats! This lesson equipped you with new knowledge on some of the most popular functions and operations available to you in SCSS. Next, let’s learn about the best practices for growing 
+your Sass codebase.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
